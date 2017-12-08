@@ -2,7 +2,22 @@ package com.github.sandradv.StringCalculator;
 
 public class StringCalculator {
 
-    public int sum(Integer x, Integer y){
-        return x + y;
+    // logical operators > < >= <= || && ==
+    public int calc(String numbers){
+        if (numbers == "") {
+            return 0;
+        } else if (numbers.split(",").length >= 2) {
+            String[] stringArray = numbers.split(",");
+            int total = 0;
+
+            for (String string : stringArray) {
+                total += Integer.parseInt(string);
+            }
+
+            return total;
+
+        } else {
+            return Integer.parseInt(numbers);
+        }
     }
 }
